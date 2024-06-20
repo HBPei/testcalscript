@@ -42,7 +42,9 @@ jobs:
           run: |
             pytest test_cal.py
         
-        - uses: pipe-cd/actions-gh-release@v2.3.4
-          with:
-            release_file: '**/RELEASE'
-            token: ${{ secrets.GITHUB_TOKEN }}
+        - name: Create a Release
+          uses: elgohr/Github-Release-Actions@v5
+          env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with: 
+            title: MyReleaseMessage
