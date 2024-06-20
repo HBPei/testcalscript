@@ -28,7 +28,7 @@ jobs:
         - name: Retrieve repo
           run: |
             ls
-            mv home/runner/work/test_cal.py .
+            mv /home/runner/work/test_cal.py .
         - name: Set up Python 3.8
           uses: actions/setup-python@v3
           with:
