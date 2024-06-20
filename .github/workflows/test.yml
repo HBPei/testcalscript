@@ -12,23 +12,25 @@ jobs:
 
         steps:
 
-        - name: checkout my codes
-          uses: actions/checkout@v2
-
-        - name: show and retrieve files of test case script
-          run: |
-            ls
-            cp test_cal.py /home/runner/work
 
         - name: Retrieve calculator function from 2nd repo
           uses: actions/checkout@v2
           with:
             repository: 64minutes/SQA_calculator_script
+
+        - name: show and retrieve files of test case script
+          run: |
+            ls
+            cp calculator.py /home/runner/work
         
+        - name: checkout my codes
+          uses: actions/checkout@v2
+
         - name: Retrieve repo
           run: |
             ls
-            mv /home/runner/work/test_cal.py .
+            mv /home/runner/work/calculator.py .
+
         - name: Set up Python 3.8
           uses: actions/setup-python@v3
           with:
